@@ -6,6 +6,13 @@ Die deutsche Sprache besteht aus Sätzen, welche sich wiederum aus bestimmten Wo
 ## Token-Arten
 Unterschieden wird zwischen 6 Token-Arten.
 
+- [Bezeichner](#bezeichner)
+- [Schlüsselwörter](#keywords)
+- [Literale](#literale)
+- [Operatoren](#operatoren)
+- [Separatoren](#separatoren)
+- [Kommentare](#kommentare)
+
 ### Bezeichner
 Ein Bezeichner (eng. Identifier) ist im Prinzip ein frei wählbarer Name. Dieser wird unter anderem an Variablen, Funktionen, Klassen, etc. vergeben und zu einem späteren Zeitpunkt kann ein Konstrukt mit diesem Bezeichner angesprochen werden.
 
@@ -29,7 +36,7 @@ Konventionen sind keine Regeln. Konventionen _können_, sollten aber nicht gebro
 > [!NOTE]
 > Weitere Konventionen werden in den jeweiligen Kapiteln beschrieben.
 
-### Schlüsselwörter
+### Keywords
 Schlüsselwörter (eng. Keywords) können nicht als [Bezeichner](#bezeichner) verwendet werden und sollten auch nicht als abgewandelte Form davon dienen. Sie dienen dem [Compiler](../resources/glossary.md#compiler) dazu u.a. Variablen, Schleifen oder Klassen zu identifizieren.
 
 | Schlüsselwort | Anwendungsbereich                                                                    | Beschreibung                                                                                                                                                                                                                                                                                       |
@@ -89,7 +96,7 @@ Schlüsselwörter (eng. Keywords) können nicht als [Bezeichner](#bezeichner) ve
 | `transient`       | - Variablen<br/>- Methoden                                       | - Variablen eines Objekts werden bei der Serialisierung nicht berücksichtigt.<br/>- Methoden eines Objekts werden bei der Serialisierung nicht berücksichtigt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `volatile`        | - Variablen<br/>- Konstanten                                     | - Alle Threads lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im Cache zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.                                                                                                                                                                                                                                                                                                                                                                                              |
 
-#### Kontextbezogene "Schlüsselwörter" – 3
+#### Kontextbezogene "Keywords" – 3
 | Schlüsselwort | Anwendungsbereich           | Beschreibung                                                                                                                                                                                                                                          |
 |---------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `var`         | - Variablen                 | - Seit Java 10 gibt es die Möglichkeit eine Variable mit `var` zu deklarieren. Es dient im Rahmen der Type Inference als Platzhalter für einen Datentyp.<br/>- Es wird häufig als Keyword verwechselt, ist aber ein Reserved Type Name.               |
