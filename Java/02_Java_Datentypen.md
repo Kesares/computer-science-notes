@@ -72,20 +72,18 @@ System.out.println(1 / 10f);
 System.out.println(1 / 10d);
 ```
 
-> [!NOTE]
+> [!CAUTION]
 > Was wird bei folgendem Beispiel auf der Konsole ausgegeben?
 > ```java
 > System.out.println(1 / 10);
 
 > [!TIP]
 > Regulär würde man im Kopf auf das Ergebnis `0.1` kommen. Da in Java jedoch standardmäßig mit Ganzzahlen gearbeitet wird, wird alles, was nach dem Komma steht abgeschnitten. Das Ergebnis ist also `0`.
-> ```java
-> System.out.println(8273469237L);
 
 > [!NOTE]
 > Wenn das Ergebnis als Kommazahl vorliegen soll, muss bei mindestens einer der beiden Operanden angegeben werden, dass es sich bei dessen Datentyp um eine Kommazahl handelt.
 
-> [!NOTE]
+> [!CAUTION]
 > Was ergibt `0.1 + 0.2`?
 
 ```java
