@@ -26,7 +26,7 @@ Primitive Datentypen werden auch einfache oder elementare Datentypen genannt. In
 #### Ganzzahlen
 
 > [!CAUTION]
-> Vorsicht ist bei der Verwendung von Ganzzahlen geboten, welche außerhalb des Wertebereichs von `int` liegen.
+> Vorsicht bei der Verwendung von Ganzzahlen, welche außerhalb des Wertebereichs von `int` liegen.
 > ```java
 > System.out.println(8273469237); // Compiler-Fehler!
 > ```
@@ -36,17 +36,15 @@ Der [Compiler](../resources/glossary.md#compiler) interpretiert solche [Literale
 > [!CAUTION]
 > ```java
 > System.out.println(8273469237);
-> 
-
-> [!NOTE]
-> ```java
-> System.out.println(8273469237L);
->
 
 > [!TIP]
+> ```java
+> System.out.println(8273469237L);
+
+> [!NOTE]
 > `System.out.println()` wird für die Ausgabe auf der Konsole verwendet – siehe <a href="04_Java_Ein_Ausgaben.md">Kapitel 4 – Ein- und Ausgaben</a>.
 
-Neben der standartmäßigen Dezimalschreibweise, kann auch die binäre, oktale oder hexadezimale Schreibweise angewendet werden.
+Neben der standardmäßig ganzzahligen Schreibweise, kann auch die binäre, oktale oder hexadezimale Schreibweise verwendet werden.
 
 | Zahlensystem | Präfix |
 |--------------|--------|
@@ -65,67 +63,61 @@ int hexadecimal = 0x2B;
 
 #### Gleitkommazahlen
 
-<tabs group="floating-point-1">
-    <tab id="floating-point-division-task-1" title="Aufgabe" group-key="task">
-        <p>Was wird bei folgendem Beispiel auf der Konsole ausgegeben?</p><br/>
-        <code-block lang="java">
-            System.out.println(1 / 10);
-        </code-block>
-    </tab>
-    <tab id="floating-point-division-solution-1" title="Lösung" group-key="solution">
-        <p>Regulär würde man im Kopf auf das Ergebnis <code>0.1</code> kommen. Da in Java jedoch standardmäßig mit Ganzzahlen gearbeitet wird, wird alles, was nach dem Komma steht abgeschnitten. Das Ergebnis ist also <code>0</code>.</p>
-    <note>
-        Wenn das Ergebnis als Kommazahl vorliegen soll, muss bei mindestens einer der beiden Operanden angegeben werden, dass es sich bei dessen Datentyp um eine Kommazahl handelt.
-    </note>
-    </tab>
-</tabs>
-
 Um Gleitkommazahlen darstellen zu können, wurden die Datentypen `float` und `double` eingeführt. Soll der Restwert berechnet werden, wird dafür der Operator `%` verwendet. Das folgende Beispiel zeigt 4 Varianten für die Kennzeichnung einer Kommazahl.
 
-<code-block lang="java">
-    System.out.println(1 / 10.0);
-    System.out.println(1 / 10.);
-    System.out.println(1 / 10f);
-    System.out.println(1 / 10d);
-</code-block>
+```java
+System.out.println(1 / 10.0);
+System.out.println(1 / 10.);
+System.out.println(1 / 10f);
+System.out.println(1 / 10d);
+```
 
-<tabs group="floating-point-2">
-    <tab id="floating-point-division-task-2" title="Aufgabe" group-key="task">
-        <p>Was erhält man, wenn man <code>0.1 + 0.2</code> rechnet?</p><br/>
-    </tab>
-    <tab id="floating-point-division-solution-2" title="Lösung" group-key="solution">
-        <code-block lang="java">
-            ~0.30000000000000004
-        </code-block>
-        <warning>
-            Da der Computer nur <code>0</code> und <code>1</code> versteht, kann es beim Rechnen mit Gleitkommazahlen zu minimalen Abweichungen kommen. Dies ist jedoch kein Problem von Java, sondern von Programmiersprachen/CPUs allgemein und liegt an einer ungünstigen Binärdarstellung.
-        </warning>
-        <note>
-            Ein zu empfehlendes Video über die Gleitkommazahlenproblematik, ist <a href="https://www.youtube.com/watch?v=PZRI1IfStY0">hier</a> zu finden.
-        </note>
-    </tab>
-</tabs>
+> [!NOTE]
+> Was wird bei folgendem Beispiel auf der Konsole ausgegeben?
+> ```java
+> System.out.println(1 / 10);
+
+> [!TIP]
+> Regulär würde man im Kopf auf das Ergebnis `0.1` kommen. Da in Java jedoch standardmäßig mit Ganzzahlen gearbeitet wird, wird alles, was nach dem Komma steht abgeschnitten. Das Ergebnis ist also `0`.
+> ```java
+> System.out.println(8273469237L);
+
+> [!NOTE]
+> Wenn das Ergebnis als Kommazahl vorliegen soll, muss bei mindestens einer der beiden Operanden angegeben werden, dass es sich bei dessen Datentyp um eine Kommazahl handelt.
+
+> [!NOTE]
+> Was ergibt `0.1 + 0.2`?
+
+```java
+~0.30000000000000004
+```
+
+> [!CAUTION]
+> Da der Computer nur `0` und `1` versteht, kann es beim Rechnen mit Gleitkommazahlen zu minimalen Abweichungen kommen. Dies ist jedoch kein Problem von Java, sondern von Programmiersprachen/CPUs allgemein und liegt an einer ungünstigen Binärdarstellung.
+
+> [!NOTE]
+> Ein zu empfehlendes Video über die Gleitkommazahlenproblematik, ist <a href="https://www.youtube.com/watch?v=PZRI1IfStY0">hier</a> zu finden.
 
 Gleitkommazahlen können auch die wissenschaftliche Notation repräsentieren. Diese kann direkt angewendet werden.
 
-<code-block lang="java">
-    double d = 1e-10;
-</code-block>
+```java
+double d = 1e-10;
+```
 
 #### Datentyp `char`
 
 Der Datentyp `char` ist für die Darstellung eines einzelnen Zeichens verantwortlich. `char` steht als Abkürzung für `character`. Intern werden die Zeichen als Unicode (16-Bit-Dualzahl) dargestellt. Mit anderen Worten: Jedes Zeichen repräsentiert intern eine Ganzzahl. Daher kann ein `char` auch als `int` gespeichert werden.
 
-<code-block lang="java">
-    int at1 = '@';
-    char at2 = '@';
-    System.out.println(at1);  // 64
-    System.out.println(at2);  // @
-</code-block>
+```java
+int at1 = '@';
+char at2 = '@';
+System.out.println(at1);  // 64
+System.out.println(at2);  // @
+```
 
 ##### Escape Sequenzen
 
-Der <tooltip term="Compiler"><format color="orange">Compiler</format></tooltip> interpretiert einige Zeichen als spezielle Zeichen. Folgende Tabelle zeigt alle möglichen Escape Sequenzen.
+Der [Compiler](../resources/glossary.md#compiler) interpretiert einige Zeichen als spezielle Zeichen. Folgende Tabelle zeigt alle möglichen Escape Sequenzen.
 
 | Escape Sequenz | Beschreibung                    |
 |----------------|---------------------------------|
@@ -143,10 +135,10 @@ Der <tooltip term="Compiler"><format color="orange">Compiler</format></tooltip> 
 
 Vergleiche werden mit dem Typ `boolean` realisiert. Beispielsweise um zu prüfen, ob eine Zahl größer ist, als eine andere. Die einzigen [Literale](01_Java_Token.md#literale) die ein `boolean` annehmen kann, sind `true` (wahr) oder `false` (falsch).
 
-<code-block lang="java">
-    boolean isRunning = false;
-    boolean isJumping = true;
-</code-block>
+```java
+boolean isRunning = false;
+boolean isJumping = true;
+```
 
 ### Referenzdatentypen
 
